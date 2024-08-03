@@ -6,6 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import "./tailwind.css";
+import PageTemplateDefault from './page-templates/default';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,9 +18,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
-        <Scripts />
+        <PageTemplateDefault>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </PageTemplateDefault>
       </body>
     </html>
   );
